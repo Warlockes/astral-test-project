@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchLogin } from "./asyncThunks/fetchLogin";
+import { fetchUser } from "./asyncThunks/fetchUser";
 import { OrNull, UserData } from "../../types/types";
 
 type UserState = {
@@ -20,17 +20,17 @@ const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchLogin.pending, (state) => {
+    builder.addCase(fetchUser.pending, (state) => {
       state.isAuthenticated = false;
       state.isLoading = true;
       state.userData = null;
     });
-    builder.addCase(fetchLogin.fulfilled, (state, { payload }) => {
+    builder.addCase(fetchUser.fulfilled, (state, { payload }) => {
       state.isAuthenticated = true;
       state.isLoading = false;
       state.userData = payload;
     });
-    builder.addCase(fetchLogin.rejected, (state) => {
+    builder.addCase(fetchUser.rejected, (state) => {
       state.isAuthenticated = false;
       state.isLoading = false;
       state.userData = null;

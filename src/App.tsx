@@ -13,9 +13,8 @@ import {
   Login as LoginPage,
   Cards as CardsPage,
   Main as MainPage,
+  Profile as ProfilePage,
 } from "./pages";
-
-const Profile = () => <h2>Мой профиль (Защищена 2)</h2>;
 
 const router = createBrowserRouter([
   { path: PAGES.LOGIN, element: <LoginPage /> },
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <MainPage /> },
       { path: PAGES.CARDS, element: <CardsPage /> },
-      { path: PAGES.PROFILE, element: <Profile /> },
+      { path: PAGES.PROFILE, element: <ProfilePage /> },
       { path: "*", element: <Navigate to={PAGES.MAIN} replace /> },
     ],
   },

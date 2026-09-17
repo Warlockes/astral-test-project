@@ -3,8 +3,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { UserApi } from "../../../api/userApi";
 import { FetchLoginDto } from "../../../api/types";
 
-export const fetchLogin = createAsyncThunk(
-  "user/fetchLogin",
+export const fetchUser = createAsyncThunk(
+  "user/fetchUser",
   async (dto: FetchLoginDto, { rejectWithValue }) => {
     try {
       const { username, password } = dto;
@@ -19,8 +19,8 @@ export const fetchLogin = createAsyncThunk(
         error instanceof Error ? error.message : "Ошибка аутентификации";
 
       alert(errorMessage);
-      console.warn("fetchLoginError", error);
-      return rejectWithValue("fetchLoginError");
+      console.warn("fetchUserError", error);
+      return rejectWithValue("fetchUserError");
     }
   }
 );

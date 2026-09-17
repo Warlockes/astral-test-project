@@ -1,4 +1,9 @@
-import { PAGES } from "../constants";
+import {
+  EMPLOYEMENT_TYPE_VALUES,
+  ENGLISH_LEVEL_VALUES,
+  GENDER_VALUES,
+  PAGES,
+} from "../constants";
 
 export type OrNull<T> = T | null;
 
@@ -7,8 +12,37 @@ export type HeaderLink = {
   href: (typeof PAGES)[keyof typeof PAGES];
 };
 
+export type Option = {
+  value: string;
+  label: string;
+};
+
+export type Gender = (typeof GENDER_VALUES)[number];
+export type EnglishLevel = (typeof ENGLISH_LEVEL_VALUES)[number];
+export type EmploymentType = (typeof EMPLOYEMENT_TYPE_VALUES)[number];
+
 export type UserData = {
   fullName: string;
+  firstName: string;
+  lastName: string;
+  middleName?: string;
+  bio?: string;
+  email?: string;
+  phone?: string;
+  age: number;
+  experienceYears: number;
+  birthDate: string;
+  englishLevel: EnglishLevel;
+  gender: Gender;
+  isPublicProfile: boolean;
+  telegram?: string;
+  website?: string;
+  address?: string;
+  enableEmailNotifications: boolean;
+  twoFactorAuth: boolean;
+  employmentType: EmploymentType;
+  hardSkills?: string;
+  softSkills?: string;
 };
 
 export type CardData = {

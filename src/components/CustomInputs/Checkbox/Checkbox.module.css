@@ -1,0 +1,41 @@
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.checkboxWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 8px 0;
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+  accent-color: #0070f3;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkboxText {
+  font-size: 15px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.errorMessage {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 2px;
+}

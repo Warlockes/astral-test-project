@@ -16,11 +16,7 @@ export const Main = () => {
       </div>
 
       <div className={styles.imageContainer}>
-        <img
-          src="/public/func.jpg"
-          alt="Programming"
-          className={styles.image}
-        />
+        <img src="/func.jpg" alt="Programming" className={styles.image} />
       </div>
 
       <div className={styles.content}>
@@ -39,19 +35,15 @@ export const Main = () => {
           resources periodically on topics like this for those who are looking
           to get started.
         </p>
-
-        <p>
-          The article covers the following points:
-          <ul className={styles.list}>
-            <li>Atwood’s Law</li>
-            <li>A definition of JavaScript</li>
-            <li>Attributes of the language</li>
-            <li>How the language is used</li>
-            <li>What libraries and frameworks are available for it</li>
-            <li>Other resources for learning it</li>
-          </ul>
-        </p>
-
+        <p>The article covers the following points:</p>
+        <ul className={styles.list}>
+          <li>Atwood’s Law</li>
+          <li>A definition of JavaScript</li>
+          <li>Attributes of the language</li>
+          <li>How the language is used</li>
+          <li>What libraries and frameworks are available for it</li>
+          <li>Other resources for learning it</li>
+        </ul>
         <div className={styles.blockquote}>
           <p>
             If you’re interested in chatting more about the articles, please
@@ -60,7 +52,6 @@ export const Main = () => {
             programming.
           </p>
         </div>
-
         <p>
           This month, I published two articles on Envato about resources for
           JavaScript and jQuery. For those who get involved in a form of
