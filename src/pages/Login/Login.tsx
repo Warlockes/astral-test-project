@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { PAGES } from "../../constants";
-import { TextField } from "../../components/TextField/TextField";
+import { TextField } from "../../components/";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { fetchLogin } from "../../redux/user/asyncThunks/fetchLogin";
 import { LoginFormData, loginFormSchema } from "../../schemas/loginFormSchema";

@@ -1,0 +1,97 @@
+.card {
+  perspective: 1000px;
+  min-height: 250px;
+  width: 100%;
+}
+
+.openContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.isOpen {
+  transform: rotateY(180deg);
+}
+
+.frontView,
+.backView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+
+.frontView {
+  background: #ffffff;
+}
+
+.backView {
+  background: #f0f7ff;
+  transform: rotateY(180deg);
+}
+
+.title {
+  font-size: 18px;
+  color: #757575;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+}
+
+.word {
+  font-size: 30px;
+  color: #212121;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.usageExample {
+  font-size: 16px;
+  color: #616161;
+  margin: 0 0 24px 0;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #0070f3;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 0;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+
+.button:hover {
+  color: #0051cb;
+}
+
+.translationLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #0070f3;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.translationValue {
+  font-size: 30px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 24px 0;
+}

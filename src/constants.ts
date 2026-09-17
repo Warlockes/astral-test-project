@@ -9,4 +9,5 @@ export const PAGES = {
 
 export const API_METHODS = {
   GET_USER: "/getUser",
+  GET_CARDS: "/getCards",
 };
