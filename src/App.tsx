@@ -1,17 +1,20 @@
+import { Provider } from "react-redux";
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
 
-import { CheckAuth } from "./hoc/CheckAuth";
-import { Login as LoginPage, Cards as CardsPage } from "./pages";
-import { ProtectedPage } from "./layout/ProtectedPage/ProtectedPage";
-import { Provider } from "react-redux";
-import { store } from "./redux/store";
 import { PAGES } from "./constants";
+import { store } from "./redux/store";
+import { CheckAuth } from "./hoc/CheckAuth";
+import { ProtectedPage } from "./layout/ProtectedPage/ProtectedPage";
+import {
+  Login as LoginPage,
+  Cards as CardsPage,
+  Main as MainPage,
+} from "./pages";
 
-const Dashboard = () => <h2>Панель управления (Защищена 1)</h2>;
 const Profile = () => <h2>Мой профиль (Защищена 2)</h2>;
 
 const router = createBrowserRouter([
@@ -24,7 +27,7 @@ const router = createBrowserRouter([
       </CheckAuth>
     ),
     children: [
-      { index: true, element: <Dashboard /> },
+      { index: true, element: <MainPage /> },
       { path: PAGES.CARDS, element: <CardsPage /> },
       { path: PAGES.PROFILE, element: <Profile /> },
       { path: "*", element: <Navigate to={PAGES.MAIN} replace /> },
