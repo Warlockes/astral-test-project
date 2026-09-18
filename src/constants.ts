@@ -1,3 +1,4 @@
+import { FieldConfig } from "./types/types";
 import { getValuesFromOptions } from "./utils/getValuesFromOptions";
 
 export const REQUIRED_FIELD_ERROR_MESSAGE = "Поле обязательно для заполнения";
@@ -73,3 +74,110 @@ export const EMPLOYEMENT_TYPE_OPTIONS = [
 export const EMPLOYEMENT_TYPE_VALUES = getValuesFromOptions([
   ...EMPLOYEMENT_TYPE_OPTIONS,
 ]);
+
+export const FORM_FIELDS: FieldConfig[] = [
+  {
+    name: "firstName",
+    label: "Имя",
+    fieldType: "input",
+  },
+  {
+    name: "lastName",
+    label: "Фамилия",
+    fieldType: "input",
+  },
+  {
+    name: "middleName",
+    label: "Отчество",
+    fieldType: "input",
+  },
+  {
+    name: "bio",
+    label: "Биография",
+    fieldType: "input",
+  },
+  {
+    name: "phone",
+    label: "Мобильный телефон",
+    fieldType: "input",
+    type: "tel",
+  },
+  {
+    name: "age",
+    label: "Возраст",
+    fieldType: "input",
+    type: "number",
+    disabled: true,
+  },
+  {
+    name: "experienceYears",
+    label: "Опыт работы (в годах)",
+    fieldType: "input",
+    type: "number",
+  },
+  {
+    name: "birthDate",
+    label: "Дата рождения",
+    fieldType: "input",
+    type: "date",
+    max: "2026-09-18",
+  },
+  {
+    name: "englishLevel",
+    label: "Уровень английского языка",
+    fieldType: "select",
+    options: [...ENGLISH_LEVEL_OPTIONS],
+  },
+  {
+    name: "gender",
+    label: "Пол",
+    fieldType: "select",
+    options: [...GENDER_OPTIONS],
+  },
+  {
+    name: "telegram",
+    label: "Telegram",
+    fieldType: "input",
+  },
+  {
+    name: "website",
+    label: "Веб-сайт",
+    fieldType: "input",
+  },
+  {
+    name: "address",
+    label: "Адрес",
+    fieldType: "input",
+  },
+  {
+    name: "employmentType",
+    label: "Режим работы",
+    fieldType: "select",
+    options: [...EMPLOYEMENT_TYPE_OPTIONS],
+  },
+  {
+    name: "hardSkills",
+    label: "HardSkills",
+    fieldType: "textarea",
+  },
+  {
+    name: "softSkills",
+    label: "SoftSkills",
+    fieldType: "textarea",
+  },
+  {
+    name: "isPublicProfile",
+    label: "Открытый профиль",
+    fieldType: "checkbox",
+  },
+  {
+    name: "enableEmailNotifications",
+    label: "Оповещения по email",
+    fieldType: "checkbox",
+  },
+  {
+    name: "twoFactorAuth",
+    label: "Двухфакторная аутентификация",
+    fieldType: "checkbox",
+  },
+];

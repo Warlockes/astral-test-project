@@ -6,6 +6,7 @@ export { EditView } from "./EditView/EditView";
 export { Select } from "./CustomInputs/Select/Select";
 export { Checkbox } from "./CustomInputs/Checkbox/Checkbox";
 export { Textarea } from "./CustomInputs/Textarea/Textarea";
+export { Field } from "./Field/Field";
 
 export type { InputProps } from "./CustomInputs/Input/Input";
 export type { SelectProps } from "./CustomInputs/Select/Select";

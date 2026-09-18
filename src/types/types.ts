@@ -1,3 +1,6 @@
+import { InputHTMLAttributes } from "react";
+
+import { EditUserFormData } from "../schemas/editUserFormSchema";
 import {
   EMPLOYEMENT_TYPE_VALUES,
   ENGLISH_LEVEL_VALUES,
@@ -51,4 +54,11 @@ export type CardData = {
   word: string;
   usageExample: string;
   translation: string;
+};
+
+export type FieldConfig = InputHTMLAttributes<HTMLInputElement> & {
+  name: keyof EditUserFormData;
+  label: string;
+  fieldType: "input" | "select" | "checkbox" | "textarea";
+  options?: Option[];
 };

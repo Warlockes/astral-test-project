@@ -7,14 +7,12 @@ import {
   useWatch,
 } from "react-hook-form";
 
+import { Field } from "../";
 import { UserData } from "../../types/types";
+import { FORM_FIELDS } from "../../constants";
 import { getCurrentAge } from "../../utils/getCurrentAge";
 import { useFormComponents } from "../../hooks/useFormComponents";
-import {
-  EMPLOYEMENT_TYPE_OPTIONS,
-  ENGLISH_LEVEL_OPTIONS,
-  GENDER_OPTIONS,
-} from "../../constants";
+
 import {
   EditUserFormData,
   editUserFormSchema,
@@ -32,8 +30,7 @@ export const EditView = ({ userData }: EditViewProps) => {
     values: userData,
   });
   const { handleSubmit, control, setValue } = methods;
-  const { TypedInput, TypedSelect, TypedTextarea, TypedCheckbox } =
-    useFormComponents<EditUserFormData>();
+  const { TypedInput } = useFormComponents<EditUserFormData>();
 
   //INFO: Если снять чекбокс "Оповещения по email" поле "Email"
   //      очищается и скрывается с формы
@@ -73,61 +70,10 @@ export const EditView = ({ userData }: EditViewProps) => {
       <h1 className={styles.title}>Редактирование профиля</h1>
       <FormProvider {...methods}>
         <form className={styles.form}>
-          <TypedInput label="Имя" name="firstName" />
-          <TypedInput label="Фамилия" name="lastName" />
-          <TypedInput label="Отчество" name="middleName" />
-          <TypedInput label="Биография" name="bio" />
-
-          {isEmailChecked ? (
+          {[FORM_FIELDS.map((field) => <Field key={field.name} {...field} />)]}
+          {isEmailChecked && (
             <TypedInput label="Email" type="email" name="email" />
-          ) : (
-            <div />
           )}
-
-          <TypedInput label="Мобильный телефон" type="tel" name="phone" />
-          <TypedInput label="Возраст" type="number" name="age" disabled />
-          <TypedInput
-            label="Опыт работы (в годах)"
-            type="number"
-            name="experienceYears"
-          />
-          <TypedInput
-            label="Дата рождения"
-            type="date"
-            name="birthDate"
-            max="2026-09-17"
-          />
-          <TypedSelect
-            label="Уровень английского языка"
-            options={[...ENGLISH_LEVEL_OPTIONS]}
-            name="englishLevel"
-          />
-          <TypedSelect
-            label="Пол"
-            options={[...GENDER_OPTIONS]}
-            name="gender"
-          />
-          <div>
-            <TypedCheckbox label="Открытый профиль" name="isPublicProfile" />
-            <TypedCheckbox
-              label="Оповещения по email"
-              name="enableEmailNotifications"
-            />
-            <TypedCheckbox
-              label="Двухфакторная аутентификация"
-              name="twoFactorAuth"
-            />
-          </div>
-          <TypedInput label="Telegram" name="telegram" />
-          <TypedInput label="Веб-сайт" name="website" />
-          <TypedInput label="Адрес" name="address" />
-          <TypedSelect
-            label="Режим работы"
-            options={[...EMPLOYEMENT_TYPE_OPTIONS]}
-            name="employmentType"
-          />
-          <TypedTextarea label="HardSkills" name="hardSkills" />
-          <TypedTextarea label="SoftSkills" name="softSkills" />
         </form>
       </FormProvider>
 
