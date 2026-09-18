@@ -1,4 +1,12 @@
 @import "./styles/reset.css";
+
+:root {
+  --primary-blue-color: #0070f3;
+  --primary-blue-color-hover: #0051cb;
+  --primary-blue-color-active: #003fa3;
+  --error-red-color: #d32f2f;
+}
+
 html,
 body {
   width: 100%;

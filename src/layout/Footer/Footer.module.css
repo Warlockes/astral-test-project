@@ -54,7 +54,7 @@
 }
 
 .contactLink:hover {
-  color: #0070f3;
+  color: var(--primary-blue-color);
 }
 
 .address {

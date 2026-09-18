@@ -30,7 +30,7 @@
 }
 
 .category {
-  color: #0070f3;
+  color: var(--primary-blue-color);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -82,7 +82,7 @@
   top: 9px;
   width: 6px;
   height: 6px;
-  background-color: #0070f3;
+  background-color: var(--primary-blue-color);
   border-radius: 50%;
   transition: transform 0.2s ease;
 }
@@ -90,7 +90,7 @@
 .blockquote {
   margin: 30px 0;
   padding: 16px 24px;
-  border-left: 4px solid #0070f3;
+  border-left: 4px solid var(--primary-blue-color);
   background-color: #f0f7ff;
   border-radius: 0 8px 8px 0;
 }
