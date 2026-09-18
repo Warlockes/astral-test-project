@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {
-  FormProvider,
-  SubmitHandler,
-  useForm,
-  useWatch,
-} from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 
 import { Field } from "../";
 import { UserData } from "../../types/types";
@@ -29,15 +24,12 @@ export const EditView = ({ userData }: EditViewProps) => {
     resolver: yupResolver(editUserFormSchema),
     values: userData,
   });
-  const { handleSubmit, control, setValue } = methods;
+  const { handleSubmit, setValue, watch } = methods;
   const { TypedInput } = useFormComponents<EditUserFormData>();
 
   //INFO: Если снять чекбокс "Оповещения по email" поле "Email"
   //      очищается и скрывается с формы
-  const isEmailChecked = useWatch({
-    control,
-    name: "enableEmailNotifications",
-  });
+  const isEmailChecked = watch("enableEmailNotifications");
 
   useEffect(() => {
     if (!isEmailChecked) {
@@ -46,10 +38,7 @@ export const EditView = ({ userData }: EditViewProps) => {
   }, [isEmailChecked]);
 
   //INFO: Поле "Возраст" disabled и зависит от значения в поле "Дата рождения"
-  const birtDate = useWatch({
-    control,
-    name: "birthDate",
-  });
+  const birtDate = watch("birthDate");
 
   useEffect(() => {
     if (birtDate) {
